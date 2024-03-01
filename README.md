@@ -1,3 +1,6 @@
+# Nick test repo for Payload CMS
+this repo contains my first attempt at using payload CMS to see how I like it and what functionalities it offers
+
 # Payload Website Template
 
 This is the official [Payload Website Template](https://github.com/payloadcms/payload/blob/main/templates/website). Use it to power websites, blogs, or portfolios from small to enterprise. This repo includes a fully-working backend, enterprise-grade admin panel, and a beautifully designed, production-ready website.
