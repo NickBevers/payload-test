@@ -23,9 +23,9 @@ export const MovieBlock: React.FC<Props> = props => {
 
   return (
     <div className={classes.movieBlock__container}>
-      {movieToShow.id}
+      {/* {movieToShow.id} */}
       <Gutter>
-        <div className={classes.movieBlock}>
+        {/* <div className={classes.movieBlock}>
           <div className={classes.movieBlock__media}>
             <Media resource={movieToShow.poster as MediaType} alt={movieToShow.title} />
           </div>
@@ -33,7 +33,8 @@ export const MovieBlock: React.FC<Props> = props => {
             <h2>{movieToShow.title}</h2>
             <p>{movieToShow.description}</p>
           </div>
-        </div>
+        </div> */}
+        <p>I'm a movie block, hear me roaarrrrr.</p>
       </Gutter>
     </div>
   )
