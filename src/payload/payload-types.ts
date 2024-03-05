@@ -157,7 +157,6 @@ export interface Page {
         blockType: 'archive';
       }
     | {
-        invertBackground?: boolean | null;
         movieToShow: string | Movie;
         id?: string | null;
         blockName?: string | null;

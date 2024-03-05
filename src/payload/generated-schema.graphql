@@ -1482,7 +1482,6 @@ enum Archive_PopulatedDocs_RelationTo {
 union Archive_PopulatedDocs = Post | Project
 
 type MovieBlock {
-  invertBackground: Boolean
   movieToShow: Movie
   id: String
   blockName: String
