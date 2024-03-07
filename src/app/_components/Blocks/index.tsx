@@ -6,6 +6,7 @@ import { CallToActionBlock } from '../../_blocks/CallToAction'
 import { CommentsBlock, type CommentsBlockProps } from '../../_blocks/Comments/index'
 import { ContentBlock } from '../../_blocks/Content'
 import { MediaBlock } from '../../_blocks/MediaBlock'
+import { MovieBlock } from '../../_blocks/MovieBlock'
 import { RelatedPosts, type RelatedPostsProps } from '../../_blocks/RelatedPosts'
 import { TestBlock } from '../../_blocks/TestBlock'
 import { toKebabCase } from '../../_utilities/toKebabCase'
@@ -20,6 +21,7 @@ const blockComponents = {
   relatedPosts: RelatedPosts,
   comments: CommentsBlock,
   testBlock: TestBlock,
+  movieBlock: MovieBlock,
 }
 
 export const Blocks: React.FC<{
@@ -68,7 +70,7 @@ export const Blocks: React.FC<{
               return (
                 <BackgroundColor key={index} invert={blockIsInverted}>
                   <VerticalPadding top={paddingTop} bottom={paddingBottom}>
-                    <Block id={toKebabCase(blockName)} {...block} />
+                    <Block id={toKebabCase(blockName)} {...(block as any)} />
                   </VerticalPadding>
                 </BackgroundColor>
               )

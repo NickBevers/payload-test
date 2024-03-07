@@ -158,6 +158,14 @@ export interface Page {
       }
     | {
         invertBackground?: boolean | null;
+        title: string;
+        description: string;
+        id?: string | null;
+        blockName?: string | null;
+        blockType: 'movieBlock';
+      }
+    | {
+        invertBackground?: boolean | null;
         id?: string | null;
         blockName?: string | null;
         blockType: 'testBlock';
@@ -451,12 +459,6 @@ export interface Post {
             blockName?: string | null;
             blockType: 'archive';
           }
-        | {
-            invertBackground?: boolean | null;
-            id?: string | null;
-            blockName?: string | null;
-            blockType: 'testBlock';
-          }
       )[]
     | null;
   relatedPosts?: (string | Post)[] | null;
@@ -619,12 +621,6 @@ export interface Project {
         blockName?: string | null;
         blockType: 'archive';
       }
-    | {
-        invertBackground?: boolean | null;
-        id?: string | null;
-        blockName?: string | null;
-        blockType: 'testBlock';
-      }
   )[];
   relatedProjects?: (string | Project)[] | null;
   slug?: string | null;
@@ -671,11 +667,11 @@ export interface Actor {
 export interface Movie {
   id: string;
   title?: string | null;
-  poster?: string | Media | null;
-  description?: string | null;
-  release_date?: string | null;
-  rating?: number | null;
-  actors?: (string | Actor)[] | null;
+  description?:
+    | {
+        [k: string]: unknown;
+      }[]
+    | null;
   updatedAt: string;
   createdAt: string;
 }

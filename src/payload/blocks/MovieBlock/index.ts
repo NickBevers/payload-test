@@ -1,18 +1,20 @@
 import type { Block } from 'payload/types'
 
+import { invertBackground } from '../../fields/invertBackground'
+
 export const MovieBlock: Block = {
   slug: 'movieBlock',
   fields: [
+    invertBackground,
     {
-      name: 'movieToShow',
-      type: 'relationship',
-      label: 'Movies',
-      relationTo: 'movies',
-      hasMany: false,
+      name: 'title',
+      type: 'text',
       required: true,
-      admin: {
-        allowCreate: true,
-      },
+    },
+    {
+      name: 'description',
+      type: 'text',
+      required: true,
     },
   ],
 }

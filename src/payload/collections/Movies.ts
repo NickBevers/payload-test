@@ -15,35 +15,9 @@ const Movies: CollectionConfig = {
       label: 'Title',
     },
     {
-      name: 'poster',
-      type: 'upload',
-      relationTo: 'media',
-    },
-    {
       name: 'description',
-      type: 'textarea',
+      type: 'richText',
       label: 'Description',
-    },
-    {
-      name: 'release_date',
-      type: 'date',
-      label: 'Release Date',
-    },
-    {
-      name: 'rating',
-      type: 'number',
-      label: 'Rating',
-      min: 0,
-      max: 5,
-    },
-    {
-      name: 'actors',
-      type: 'relationship',
-      relationTo: 'actors',
-      hasMany: true,
-      admin: {
-        allowCreate: true,
-      },
     },
   ],
 }

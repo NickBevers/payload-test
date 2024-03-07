@@ -7,35 +7,18 @@ import { Media } from '../../_components/Media'
 
 import classes from './index.module.scss'
 
-// type Props = Extract<Page['layout'][0], { blockType: 'movieBlock' }> & {
-//   movieToShow: Movie
-//   staticImage?: StaticImageData
-// }
-
-// type Props = Extract<Page['layout'][0], { blockType: 'movieBlock' }>
-
-type Props = {
-  movieToShow: Movie
+type Props = Extract<Page['layout'][0], { blockType: 'movieBlock' }> & {
+  title: string
+  description: string
 }
 
 export const MovieBlock: React.FC<Props> = props => {
-  const { movieToShow } = props as Props & { movieToShow: Movie }
+  const { title, description } = props
 
   return (
-    <div className={classes.movieBlock__container}>
-      {/* {movieToShow.id} */}
-      <Gutter>
-        {/* <div className={classes.movieBlock}>
-          <div className={classes.movieBlock__media}>
-            <Media resource={movieToShow.poster as MediaType} alt={movieToShow.title} />
-          </div>
-          <div className={classes.movieBlock__content}>
-            <h2>{movieToShow.title}</h2>
-            <p>{movieToShow.description}</p>
-          </div>
-        </div> */}
-        <p>I'm a movie block, hear me roaarrrrr.</p>
-      </Gutter>
-    </div>
+    <Gutter className={classes.root}>
+      <h2>{title}</h2>
+      <p>{description}</p>
+    </Gutter>
   )
 }

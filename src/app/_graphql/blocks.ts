@@ -43,6 +43,15 @@ export const TEST_BLOCK = `
 }
 `
 
+export const MOVIE_BLOCK = `
+...on MovieBlock {
+  blockType
+  invertBackground
+  title
+  description
+}
+`
+
 export const ARCHIVE_BLOCK = `
 ...on Archive {
   blockType

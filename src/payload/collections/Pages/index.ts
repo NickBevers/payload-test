@@ -6,6 +6,7 @@ import { Archive } from '../../blocks/ArchiveBlock'
 import { CallToAction } from '../../blocks/CallToAction'
 import { Content } from '../../blocks/Content'
 import { MediaBlock } from '../../blocks/MediaBlock'
+import { MovieBlock } from '../../blocks/MovieBlock'
 import { TestBlock } from '../../blocks/TestBlock'
 import { hero } from '../../fields/hero'
 import { slugField } from '../../fields/slug'
@@ -65,7 +66,7 @@ export const Pages: CollectionConfig = {
               name: 'layout',
               type: 'blocks',
               required: true,
-              blocks: [CallToAction, Content, MediaBlock, Archive, TestBlock],
+              blocks: [CallToAction, Content, MediaBlock, Archive, MovieBlock, TestBlock],
             },
           ],
         },
