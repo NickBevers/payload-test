@@ -7,12 +7,6 @@ export const MovieBlock: Block = {
   fields: [
     invertBackground,
     {
-      name: 'media',
-      type: 'upload',
-      relationTo: 'media',
-      required: true,
-    },
-    {
       name: 'movie',
       type: 'relationship',
       relationTo: 'movies',

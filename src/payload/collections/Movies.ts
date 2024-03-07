@@ -10,6 +10,12 @@ const Movies: CollectionConfig = {
   },
   fields: [
     {
+      name: 'media',
+      type: 'upload',
+      relationTo: 'media',
+      required: true,
+    },
+    {
       name: 'title',
       type: 'text',
       label: 'Title',
@@ -18,6 +24,12 @@ const Movies: CollectionConfig = {
       name: 'description',
       type: 'text',
       label: 'Description',
+    },
+    {
+      name: 'actor',
+      type: 'relationship',
+      relationTo: 'actors',
+      required: true,
     },
   ],
 }

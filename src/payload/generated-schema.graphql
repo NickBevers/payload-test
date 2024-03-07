@@ -1483,30 +1483,39 @@ union Archive_PopulatedDocs = Post | Project
 
 type MovieBlock {
   invertBackground: Boolean
-  media(where: MovieBlock_Media_where): Media
   movie: Movie
   id: String
   blockName: String
   blockType: String
 }
 
-input MovieBlock_Media_where {
-  alt: MovieBlock_Media_alt_operator
-  caption: MovieBlock_Media_caption_operator
-  updatedAt: MovieBlock_Media_updatedAt_operator
-  createdAt: MovieBlock_Media_createdAt_operator
-  url: MovieBlock_Media_url_operator
-  filename: MovieBlock_Media_filename_operator
-  mimeType: MovieBlock_Media_mimeType_operator
-  filesize: MovieBlock_Media_filesize_operator
-  width: MovieBlock_Media_width_operator
-  height: MovieBlock_Media_height_operator
-  id: MovieBlock_Media_id_operator
-  AND: [MovieBlock_Media_where_and]
-  OR: [MovieBlock_Media_where_or]
+type Movie {
+  id: String
+  media(where: Movie_Media_where): Media!
+  title: String
+  description: String
+  actor: Actor!
+  updatedAt: DateTime
+  createdAt: DateTime
 }
 
-input MovieBlock_Media_alt_operator {
+input Movie_Media_where {
+  alt: Movie_Media_alt_operator
+  caption: Movie_Media_caption_operator
+  updatedAt: Movie_Media_updatedAt_operator
+  createdAt: Movie_Media_createdAt_operator
+  url: Movie_Media_url_operator
+  filename: Movie_Media_filename_operator
+  mimeType: Movie_Media_mimeType_operator
+  filesize: Movie_Media_filesize_operator
+  width: Movie_Media_width_operator
+  height: Movie_Media_height_operator
+  id: Movie_Media_id_operator
+  AND: [Movie_Media_where_and]
+  OR: [Movie_Media_where_or]
+}
+
+input Movie_Media_alt_operator {
   equals: String
   not_equals: String
   like: String
@@ -1516,7 +1525,7 @@ input MovieBlock_Media_alt_operator {
   all: [String]
 }
 
-input MovieBlock_Media_caption_operator {
+input Movie_Media_caption_operator {
   equals: JSON
   not_equals: JSON
   like: JSON
@@ -1524,7 +1533,7 @@ input MovieBlock_Media_caption_operator {
   exists: Boolean
 }
 
-input MovieBlock_Media_updatedAt_operator {
+input Movie_Media_updatedAt_operator {
   equals: DateTime
   not_equals: DateTime
   greater_than_equal: DateTime
@@ -1535,7 +1544,7 @@ input MovieBlock_Media_updatedAt_operator {
   exists: Boolean
 }
 
-input MovieBlock_Media_createdAt_operator {
+input Movie_Media_createdAt_operator {
   equals: DateTime
   not_equals: DateTime
   greater_than_equal: DateTime
@@ -1546,7 +1555,7 @@ input MovieBlock_Media_createdAt_operator {
   exists: Boolean
 }
 
-input MovieBlock_Media_url_operator {
+input Movie_Media_url_operator {
   equals: String
   not_equals: String
   like: String
@@ -1557,7 +1566,7 @@ input MovieBlock_Media_url_operator {
   exists: Boolean
 }
 
-input MovieBlock_Media_filename_operator {
+input Movie_Media_filename_operator {
   equals: String
   not_equals: String
   like: String
@@ -1568,7 +1577,7 @@ input MovieBlock_Media_filename_operator {
   exists: Boolean
 }
 
-input MovieBlock_Media_mimeType_operator {
+input Movie_Media_mimeType_operator {
   equals: String
   not_equals: String
   like: String
@@ -1579,7 +1588,7 @@ input MovieBlock_Media_mimeType_operator {
   exists: Boolean
 }
 
-input MovieBlock_Media_filesize_operator {
+input Movie_Media_filesize_operator {
   equals: Float
   not_equals: Float
   greater_than_equal: Float
@@ -1589,7 +1598,7 @@ input MovieBlock_Media_filesize_operator {
   exists: Boolean
 }
 
-input MovieBlock_Media_width_operator {
+input Movie_Media_width_operator {
   equals: Float
   not_equals: Float
   greater_than_equal: Float
@@ -1599,7 +1608,7 @@ input MovieBlock_Media_width_operator {
   exists: Boolean
 }
 
-input MovieBlock_Media_height_operator {
+input Movie_Media_height_operator {
   equals: Float
   not_equals: Float
   greater_than_equal: Float
@@ -1609,7 +1618,7 @@ input MovieBlock_Media_height_operator {
   exists: Boolean
 }
 
-input MovieBlock_Media_id_operator {
+input Movie_Media_id_operator {
   equals: String
   not_equals: String
   like: String
@@ -1620,44 +1629,43 @@ input MovieBlock_Media_id_operator {
   exists: Boolean
 }
 
-input MovieBlock_Media_where_and {
-  alt: MovieBlock_Media_alt_operator
-  caption: MovieBlock_Media_caption_operator
-  updatedAt: MovieBlock_Media_updatedAt_operator
-  createdAt: MovieBlock_Media_createdAt_operator
-  url: MovieBlock_Media_url_operator
-  filename: MovieBlock_Media_filename_operator
-  mimeType: MovieBlock_Media_mimeType_operator
-  filesize: MovieBlock_Media_filesize_operator
-  width: MovieBlock_Media_width_operator
-  height: MovieBlock_Media_height_operator
-  id: MovieBlock_Media_id_operator
-  AND: [MovieBlock_Media_where_and]
-  OR: [MovieBlock_Media_where_or]
+input Movie_Media_where_and {
+  alt: Movie_Media_alt_operator
+  caption: Movie_Media_caption_operator
+  updatedAt: Movie_Media_updatedAt_operator
+  createdAt: Movie_Media_createdAt_operator
+  url: Movie_Media_url_operator
+  filename: Movie_Media_filename_operator
+  mimeType: Movie_Media_mimeType_operator
+  filesize: Movie_Media_filesize_operator
+  width: Movie_Media_width_operator
+  height: Movie_Media_height_operator
+  id: Movie_Media_id_operator
+  AND: [Movie_Media_where_and]
+  OR: [Movie_Media_where_or]
 }
 
-input MovieBlock_Media_where_or {
-  alt: MovieBlock_Media_alt_operator
-  caption: MovieBlock_Media_caption_operator
-  updatedAt: MovieBlock_Media_updatedAt_operator
-  createdAt: MovieBlock_Media_createdAt_operator
-  url: MovieBlock_Media_url_operator
-  filename: MovieBlock_Media_filename_operator
-  mimeType: MovieBlock_Media_mimeType_operator
-  filesize: MovieBlock_Media_filesize_operator
-  width: MovieBlock_Media_width_operator
-  height: MovieBlock_Media_height_operator
-  id: MovieBlock_Media_id_operator
-  AND: [MovieBlock_Media_where_and]
-  OR: [MovieBlock_Media_where_or]
+input Movie_Media_where_or {
+  alt: Movie_Media_alt_operator
+  caption: Movie_Media_caption_operator
+  updatedAt: Movie_Media_updatedAt_operator
+  createdAt: Movie_Media_createdAt_operator
+  url: Movie_Media_url_operator
+  filename: Movie_Media_filename_operator
+  mimeType: Movie_Media_mimeType_operator
+  filesize: Movie_Media_filesize_operator
+  width: Movie_Media_width_operator
+  height: Movie_Media_height_operator
+  id: Movie_Media_id_operator
+  AND: [Movie_Media_where_and]
+  OR: [Movie_Media_where_or]
 }
 
-type Movie {
+type Actor {
   id: String
-  title: String
-  description: String
-  updatedAt: DateTime
-  createdAt: DateTime
+  first_name: String
+  last_name: String
+  full_name: String
 }
 
 type TestBlock {
@@ -9130,13 +9138,6 @@ input versionsComment_where_or {
   OR: [versionsComment_where_or]
 }
 
-type Actor {
-  id: String
-  first_name: String
-  last_name: String
-  full_name: String
-}
-
 type Actors {
   docs: [Actor]
   hasNextPage: Boolean
@@ -9340,13 +9341,20 @@ type Movies {
 }
 
 input Movie_where {
+  media: Movie_media_operator
   title: Movie_title_operator
   description: Movie_description_operator
+  actor: Movie_actor_operator
   updatedAt: Movie_updatedAt_operator
   createdAt: Movie_createdAt_operator
   id: Movie_id_operator
   AND: [Movie_where_and]
   OR: [Movie_where_or]
+}
+
+input Movie_media_operator {
+  equals: String
+  not_equals: String
 }
 
 input Movie_title_operator {
@@ -9369,6 +9377,14 @@ input Movie_description_operator {
   not_in: [String]
   all: [String]
   exists: Boolean
+}
+
+input Movie_actor_operator {
+  equals: JSON
+  not_equals: JSON
+  in: [JSON]
+  not_in: [JSON]
+  all: [JSON]
 }
 
 input Movie_updatedAt_operator {
@@ -9405,8 +9421,10 @@ input Movie_id_operator {
 }
 
 input Movie_where_and {
+  media: Movie_media_operator
   title: Movie_title_operator
   description: Movie_description_operator
+  actor: Movie_actor_operator
   updatedAt: Movie_updatedAt_operator
   createdAt: Movie_createdAt_operator
   id: Movie_id_operator
@@ -9415,8 +9433,10 @@ input Movie_where_and {
 }
 
 input Movie_where_or {
+  media: Movie_media_operator
   title: Movie_title_operator
   description: Movie_description_operator
+  actor: Movie_actor_operator
   updatedAt: Movie_updatedAt_operator
   createdAt: Movie_createdAt_operator
   id: Movie_id_operator
@@ -9433,10 +9453,35 @@ type moviesDocAccess {
 }
 
 type MoviesDocAccessFields {
+  media: MoviesDocAccessFields_media
   title: MoviesDocAccessFields_title
   description: MoviesDocAccessFields_description
+  actor: MoviesDocAccessFields_actor
   updatedAt: MoviesDocAccessFields_updatedAt
   createdAt: MoviesDocAccessFields_createdAt
+}
+
+type MoviesDocAccessFields_media {
+  create: MoviesDocAccessFields_media_Create
+  read: MoviesDocAccessFields_media_Read
+  update: MoviesDocAccessFields_media_Update
+  delete: MoviesDocAccessFields_media_Delete
+}
+
+type MoviesDocAccessFields_media_Create {
+  permission: Boolean!
+}
+
+type MoviesDocAccessFields_media_Read {
+  permission: Boolean!
+}
+
+type MoviesDocAccessFields_media_Update {
+  permission: Boolean!
+}
+
+type MoviesDocAccessFields_media_Delete {
+  permission: Boolean!
 }
 
 type MoviesDocAccessFields_title {
@@ -9482,6 +9527,29 @@ type MoviesDocAccessFields_description_Update {
 }
 
 type MoviesDocAccessFields_description_Delete {
+  permission: Boolean!
+}
+
+type MoviesDocAccessFields_actor {
+  create: MoviesDocAccessFields_actor_Create
+  read: MoviesDocAccessFields_actor_Read
+  update: MoviesDocAccessFields_actor_Update
+  delete: MoviesDocAccessFields_actor_Delete
+}
+
+type MoviesDocAccessFields_actor_Create {
+  permission: Boolean!
+}
+
+type MoviesDocAccessFields_actor_Read {
+  permission: Boolean!
+}
+
+type MoviesDocAccessFields_actor_Update {
+  permission: Boolean!
+}
+
+type MoviesDocAccessFields_actor_Delete {
   permission: Boolean!
 }
 
@@ -14139,10 +14207,35 @@ type moviesAccess {
 }
 
 type MoviesFields {
+  media: MoviesFields_media
   title: MoviesFields_title
   description: MoviesFields_description
+  actor: MoviesFields_actor
   updatedAt: MoviesFields_updatedAt
   createdAt: MoviesFields_createdAt
+}
+
+type MoviesFields_media {
+  create: MoviesFields_media_Create
+  read: MoviesFields_media_Read
+  update: MoviesFields_media_Update
+  delete: MoviesFields_media_Delete
+}
+
+type MoviesFields_media_Create {
+  permission: Boolean!
+}
+
+type MoviesFields_media_Read {
+  permission: Boolean!
+}
+
+type MoviesFields_media_Update {
+  permission: Boolean!
+}
+
+type MoviesFields_media_Delete {
+  permission: Boolean!
 }
 
 type MoviesFields_title {
@@ -14188,6 +14281,29 @@ type MoviesFields_description_Update {
 }
 
 type MoviesFields_description_Delete {
+  permission: Boolean!
+}
+
+type MoviesFields_actor {
+  create: MoviesFields_actor_Create
+  read: MoviesFields_actor_Read
+  update: MoviesFields_actor_Update
+  delete: MoviesFields_actor_Delete
+}
+
+type MoviesFields_actor_Create {
+  permission: Boolean!
+}
+
+type MoviesFields_actor_Read {
+  permission: Boolean!
+}
+
+type MoviesFields_actor_Update {
+  permission: Boolean!
+}
+
+type MoviesFields_actor_Delete {
   permission: Boolean!
 }
 
@@ -15903,15 +16019,19 @@ input mutationActorUpdateInput {
 }
 
 input mutationMovieInput {
+  media: String!
   title: String
   description: String
+  actor: String
   updatedAt: String
   createdAt: String
 }
 
 input mutationMovieUpdateInput {
+  media: String
   title: String
   description: String
+  actor: String
   updatedAt: String
   createdAt: String
 }

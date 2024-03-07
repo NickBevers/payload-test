@@ -158,7 +158,6 @@ export interface Page {
       }
     | {
         invertBackground?: boolean | null;
-        media: string | Media;
         movie: string | Movie;
         id?: string | null;
         blockName?: string | null;
@@ -639,10 +638,22 @@ export interface Project {
  */
 export interface Movie {
   id: string;
+  media: string | Media;
   title?: string | null;
   description?: string | null;
+  actor: string | Actor;
   updatedAt: string;
   createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "actors".
+ */
+export interface Actor {
+  id: string;
+  first_name?: string | null;
+  last_name?: string | null;
+  full_name?: string | null;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
@@ -660,16 +671,6 @@ export interface Comment {
   updatedAt: string;
   createdAt: string;
   _status?: ('draft' | 'published') | null;
-}
-/**
- * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "actors".
- */
-export interface Actor {
-  id: string;
-  first_name?: string | null;
-  last_name?: string | null;
-  full_name?: string | null;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
