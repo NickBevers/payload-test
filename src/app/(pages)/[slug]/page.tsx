@@ -50,9 +50,13 @@ export default async function Page({ params: { slug = 'home' } }) {
 
   const { hero, layout } = page
 
+  // eslint-disable-next-line no-console
+  console.log(layout)
+
   return (
     <React.Fragment>
       <Hero {...hero} />
+      <>{JSON.stringify(layout)}</>
       <Blocks
         blocks={layout}
         disableTopPadding={!hero || hero?.type === 'none' || hero?.type === 'lowImpact'}

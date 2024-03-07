@@ -157,10 +157,10 @@ export interface Page {
         blockType: 'archive';
       }
     | {
-        movieToShow: string | Movie;
+        invertBackground?: boolean | null;
         id?: string | null;
         blockName?: string | null;
-        blockType: 'movieBlock';
+        blockType: 'testBlock';
       }
   )[];
   slug?: string | null;
@@ -451,6 +451,12 @@ export interface Post {
             blockName?: string | null;
             blockType: 'archive';
           }
+        | {
+            invertBackground?: boolean | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'testBlock';
+          }
       )[]
     | null;
   relatedPosts?: (string | Post)[] | null;
@@ -613,6 +619,12 @@ export interface Project {
         blockName?: string | null;
         blockType: 'archive';
       }
+    | {
+        invertBackground?: boolean | null;
+        id?: string | null;
+        blockName?: string | null;
+        blockType: 'testBlock';
+      }
   )[];
   relatedProjects?: (string | Project)[] | null;
   slug?: string | null;
@@ -624,31 +636,6 @@ export interface Project {
   updatedAt: string;
   createdAt: string;
   _status?: ('draft' | 'published') | null;
-}
-/**
- * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "movies".
- */
-export interface Movie {
-  id: string;
-  title?: string | null;
-  poster?: string | Media | null;
-  description?: string | null;
-  release_date?: string | null;
-  rating?: number | null;
-  actors?: (string | Actor)[] | null;
-  updatedAt: string;
-  createdAt: string;
-}
-/**
- * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "actors".
- */
-export interface Actor {
-  id: string;
-  first_name?: string | null;
-  last_name?: string | null;
-  full_name?: string | null;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
@@ -666,6 +653,31 @@ export interface Comment {
   updatedAt: string;
   createdAt: string;
   _status?: ('draft' | 'published') | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "actors".
+ */
+export interface Actor {
+  id: string;
+  first_name?: string | null;
+  last_name?: string | null;
+  full_name?: string | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "movies".
+ */
+export interface Movie {
+  id: string;
+  title?: string | null;
+  poster?: string | Media | null;
+  description?: string | null;
+  release_date?: string | null;
+  rating?: number | null;
+  actors?: (string | Actor)[] | null;
+  updatedAt: string;
+  createdAt: string;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
