@@ -158,6 +158,7 @@ export interface Page {
       }
     | {
         invertBackground?: boolean | null;
+        media: string | Media;
         title: string;
         description: string;
         id?: string | null;

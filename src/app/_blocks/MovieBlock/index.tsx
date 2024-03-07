@@ -10,6 +10,7 @@ import classes from './index.module.scss'
 type Props = Extract<Page['layout'][0], { blockType: 'movieBlock' }> & {
   title: string
   description: string
+  media: MediaType
 }
 
 export const MovieBlock: React.FC<Props> = props => {
@@ -17,6 +18,7 @@ export const MovieBlock: React.FC<Props> = props => {
 
   return (
     <Gutter className={classes.root}>
+      <Media resource={props.media} />
       <h2>{title}</h2>
       <p>{description}</p>
     </Gutter>

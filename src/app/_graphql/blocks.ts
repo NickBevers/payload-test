@@ -47,6 +47,7 @@ export const MOVIE_BLOCK = `
 ...on MovieBlock {
   blockType
   invertBackground
+  ${MEDIA}
   title
   description
 }

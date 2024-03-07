@@ -1483,11 +1483,174 @@ union Archive_PopulatedDocs = Post | Project
 
 type MovieBlock {
   invertBackground: Boolean
+  media(where: MovieBlock_Media_where): Media
   title: String
   description: String
   id: String
   blockName: String
   blockType: String
+}
+
+input MovieBlock_Media_where {
+  alt: MovieBlock_Media_alt_operator
+  caption: MovieBlock_Media_caption_operator
+  updatedAt: MovieBlock_Media_updatedAt_operator
+  createdAt: MovieBlock_Media_createdAt_operator
+  url: MovieBlock_Media_url_operator
+  filename: MovieBlock_Media_filename_operator
+  mimeType: MovieBlock_Media_mimeType_operator
+  filesize: MovieBlock_Media_filesize_operator
+  width: MovieBlock_Media_width_operator
+  height: MovieBlock_Media_height_operator
+  id: MovieBlock_Media_id_operator
+  AND: [MovieBlock_Media_where_and]
+  OR: [MovieBlock_Media_where_or]
+}
+
+input MovieBlock_Media_alt_operator {
+  equals: String
+  not_equals: String
+  like: String
+  contains: String
+  in: [String]
+  not_in: [String]
+  all: [String]
+}
+
+input MovieBlock_Media_caption_operator {
+  equals: JSON
+  not_equals: JSON
+  like: JSON
+  contains: JSON
+  exists: Boolean
+}
+
+input MovieBlock_Media_updatedAt_operator {
+  equals: DateTime
+  not_equals: DateTime
+  greater_than_equal: DateTime
+  greater_than: DateTime
+  less_than_equal: DateTime
+  less_than: DateTime
+  like: DateTime
+  exists: Boolean
+}
+
+input MovieBlock_Media_createdAt_operator {
+  equals: DateTime
+  not_equals: DateTime
+  greater_than_equal: DateTime
+  greater_than: DateTime
+  less_than_equal: DateTime
+  less_than: DateTime
+  like: DateTime
+  exists: Boolean
+}
+
+input MovieBlock_Media_url_operator {
+  equals: String
+  not_equals: String
+  like: String
+  contains: String
+  in: [String]
+  not_in: [String]
+  all: [String]
+  exists: Boolean
+}
+
+input MovieBlock_Media_filename_operator {
+  equals: String
+  not_equals: String
+  like: String
+  contains: String
+  in: [String]
+  not_in: [String]
+  all: [String]
+  exists: Boolean
+}
+
+input MovieBlock_Media_mimeType_operator {
+  equals: String
+  not_equals: String
+  like: String
+  contains: String
+  in: [String]
+  not_in: [String]
+  all: [String]
+  exists: Boolean
+}
+
+input MovieBlock_Media_filesize_operator {
+  equals: Float
+  not_equals: Float
+  greater_than_equal: Float
+  greater_than: Float
+  less_than_equal: Float
+  less_than: Float
+  exists: Boolean
+}
+
+input MovieBlock_Media_width_operator {
+  equals: Float
+  not_equals: Float
+  greater_than_equal: Float
+  greater_than: Float
+  less_than_equal: Float
+  less_than: Float
+  exists: Boolean
+}
+
+input MovieBlock_Media_height_operator {
+  equals: Float
+  not_equals: Float
+  greater_than_equal: Float
+  greater_than: Float
+  less_than_equal: Float
+  less_than: Float
+  exists: Boolean
+}
+
+input MovieBlock_Media_id_operator {
+  equals: String
+  not_equals: String
+  like: String
+  contains: String
+  in: [String]
+  not_in: [String]
+  all: [String]
+  exists: Boolean
+}
+
+input MovieBlock_Media_where_and {
+  alt: MovieBlock_Media_alt_operator
+  caption: MovieBlock_Media_caption_operator
+  updatedAt: MovieBlock_Media_updatedAt_operator
+  createdAt: MovieBlock_Media_createdAt_operator
+  url: MovieBlock_Media_url_operator
+  filename: MovieBlock_Media_filename_operator
+  mimeType: MovieBlock_Media_mimeType_operator
+  filesize: MovieBlock_Media_filesize_operator
+  width: MovieBlock_Media_width_operator
+  height: MovieBlock_Media_height_operator
+  id: MovieBlock_Media_id_operator
+  AND: [MovieBlock_Media_where_and]
+  OR: [MovieBlock_Media_where_or]
+}
+
+input MovieBlock_Media_where_or {
+  alt: MovieBlock_Media_alt_operator
+  caption: MovieBlock_Media_caption_operator
+  updatedAt: MovieBlock_Media_updatedAt_operator
+  createdAt: MovieBlock_Media_createdAt_operator
+  url: MovieBlock_Media_url_operator
+  filename: MovieBlock_Media_filename_operator
+  mimeType: MovieBlock_Media_mimeType_operator
+  filesize: MovieBlock_Media_filesize_operator
+  width: MovieBlock_Media_width_operator
+  height: MovieBlock_Media_height_operator
+  id: MovieBlock_Media_id_operator
+  AND: [MovieBlock_Media_where_and]
+  OR: [MovieBlock_Media_where_or]
 }
 
 type TestBlock {
