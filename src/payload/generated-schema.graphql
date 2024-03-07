@@ -1494,7 +1494,7 @@ type Movie {
   media(where: Movie_Media_where): Media!
   title: String
   description: String
-  actor: Actor!
+  actor: [Actor!]!
   updatedAt: DateTime
   createdAt: DateTime
 }
@@ -16022,7 +16022,7 @@ input mutationMovieInput {
   media: String!
   title: String
   description: String
-  actor: String
+  actor: [String]
   updatedAt: String
   createdAt: String
 }
@@ -16031,7 +16031,7 @@ input mutationMovieUpdateInput {
   media: String
   title: String
   description: String
-  actor: String
+  actor: [String]
   updatedAt: String
   createdAt: String
 }
