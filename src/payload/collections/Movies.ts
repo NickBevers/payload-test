@@ -16,7 +16,7 @@ const Movies: CollectionConfig = {
     },
     {
       name: 'description',
-      type: 'richText',
+      type: 'text',
       label: 'Description',
     },
   ],

@@ -13,13 +13,9 @@ export const MovieBlock: Block = {
       required: true,
     },
     {
-      name: 'title',
-      type: 'text',
-      required: true,
-    },
-    {
-      name: 'description',
-      type: 'text',
+      name: 'movie',
+      type: 'relationship',
+      relationTo: 'movies',
       required: true,
     },
   ],

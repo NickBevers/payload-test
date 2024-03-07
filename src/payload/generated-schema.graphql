@@ -1484,8 +1484,7 @@ union Archive_PopulatedDocs = Post | Project
 type MovieBlock {
   invertBackground: Boolean
   media(where: MovieBlock_Media_where): Media
-  title: String
-  description: String
+  movie: Movie
   id: String
   blockName: String
   blockType: String
@@ -1651,6 +1650,14 @@ input MovieBlock_Media_where_or {
   id: MovieBlock_Media_id_operator
   AND: [MovieBlock_Media_where_and]
   OR: [MovieBlock_Media_where_or]
+}
+
+type Movie {
+  id: String
+  title: String
+  description: String
+  updatedAt: DateTime
+  createdAt: DateTime
 }
 
 type TestBlock {
@@ -9318,14 +9325,6 @@ type ActorsDeleteDocAccess {
   where: JSONObject
 }
 
-type Movie {
-  id: String
-  title: String
-  description(depth: Int): JSON
-  updatedAt: DateTime
-  createdAt: DateTime
-}
-
 type Movies {
   docs: [Movie]
   hasNextPage: Boolean
@@ -9362,10 +9361,13 @@ input Movie_title_operator {
 }
 
 input Movie_description_operator {
-  equals: JSON
-  not_equals: JSON
-  like: JSON
-  contains: JSON
+  equals: String
+  not_equals: String
+  like: String
+  contains: String
+  in: [String]
+  not_in: [String]
+  all: [String]
   exists: Boolean
 }
 
@@ -15902,14 +15904,14 @@ input mutationActorUpdateInput {
 
 input mutationMovieInput {
   title: String
-  description: JSON
+  description: String
   updatedAt: String
   createdAt: String
 }
 
 input mutationMovieUpdateInput {
   title: String
-  description: JSON
+  description: String
   updatedAt: String
   createdAt: String
 }

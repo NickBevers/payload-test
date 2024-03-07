@@ -2,6 +2,7 @@ import { CATEGORIES } from './categories'
 import { LINK_FIELDS } from './link'
 import { MEDIA } from './media'
 import { META } from './meta'
+import { MOVIE } from './movie'
 
 export const CALL_TO_ACTION = `
 ...on Cta {
@@ -48,8 +49,7 @@ export const MOVIE_BLOCK = `
   blockType
   invertBackground
   ${MEDIA}
-  title
-  description
+  ${MOVIE}
 }
 `
 

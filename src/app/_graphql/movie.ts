@@ -1,13 +1,9 @@
-export const MOVIE_FIELDS = `
+const MOVIE_FIELDS = `
   id
   title
-  releaseDate
-  poster{
-    id
-    url
-  }
+  description
 `
 
-export const MOVIE = `movieToShow {
+export const MOVIE = `movie {
   ${MOVIE_FIELDS}
 }`
