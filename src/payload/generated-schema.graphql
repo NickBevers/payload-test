@@ -1494,7 +1494,7 @@ type Movie {
   media(where: Movie_Media_where): Media!
   title: String
   description: String
-  actor: [Actor!]!
+  actors: [Actor!]!
   updatedAt: DateTime
   createdAt: DateTime
 }
@@ -9344,7 +9344,7 @@ input Movie_where {
   media: Movie_media_operator
   title: Movie_title_operator
   description: Movie_description_operator
-  actor: Movie_actor_operator
+  actors: Movie_actors_operator
   updatedAt: Movie_updatedAt_operator
   createdAt: Movie_createdAt_operator
   id: Movie_id_operator
@@ -9379,7 +9379,7 @@ input Movie_description_operator {
   exists: Boolean
 }
 
-input Movie_actor_operator {
+input Movie_actors_operator {
   equals: JSON
   not_equals: JSON
   in: [JSON]
@@ -9424,7 +9424,7 @@ input Movie_where_and {
   media: Movie_media_operator
   title: Movie_title_operator
   description: Movie_description_operator
-  actor: Movie_actor_operator
+  actors: Movie_actors_operator
   updatedAt: Movie_updatedAt_operator
   createdAt: Movie_createdAt_operator
   id: Movie_id_operator
@@ -9436,7 +9436,7 @@ input Movie_where_or {
   media: Movie_media_operator
   title: Movie_title_operator
   description: Movie_description_operator
-  actor: Movie_actor_operator
+  actors: Movie_actors_operator
   updatedAt: Movie_updatedAt_operator
   createdAt: Movie_createdAt_operator
   id: Movie_id_operator
@@ -9456,7 +9456,7 @@ type MoviesDocAccessFields {
   media: MoviesDocAccessFields_media
   title: MoviesDocAccessFields_title
   description: MoviesDocAccessFields_description
-  actor: MoviesDocAccessFields_actor
+  actors: MoviesDocAccessFields_actors
   updatedAt: MoviesDocAccessFields_updatedAt
   createdAt: MoviesDocAccessFields_createdAt
 }
@@ -9530,26 +9530,26 @@ type MoviesDocAccessFields_description_Delete {
   permission: Boolean!
 }
 
-type MoviesDocAccessFields_actor {
-  create: MoviesDocAccessFields_actor_Create
-  read: MoviesDocAccessFields_actor_Read
-  update: MoviesDocAccessFields_actor_Update
-  delete: MoviesDocAccessFields_actor_Delete
+type MoviesDocAccessFields_actors {
+  create: MoviesDocAccessFields_actors_Create
+  read: MoviesDocAccessFields_actors_Read
+  update: MoviesDocAccessFields_actors_Update
+  delete: MoviesDocAccessFields_actors_Delete
 }
 
-type MoviesDocAccessFields_actor_Create {
+type MoviesDocAccessFields_actors_Create {
   permission: Boolean!
 }
 
-type MoviesDocAccessFields_actor_Read {
+type MoviesDocAccessFields_actors_Read {
   permission: Boolean!
 }
 
-type MoviesDocAccessFields_actor_Update {
+type MoviesDocAccessFields_actors_Update {
   permission: Boolean!
 }
 
-type MoviesDocAccessFields_actor_Delete {
+type MoviesDocAccessFields_actors_Delete {
   permission: Boolean!
 }
 
@@ -14210,7 +14210,7 @@ type MoviesFields {
   media: MoviesFields_media
   title: MoviesFields_title
   description: MoviesFields_description
-  actor: MoviesFields_actor
+  actors: MoviesFields_actors
   updatedAt: MoviesFields_updatedAt
   createdAt: MoviesFields_createdAt
 }
@@ -14284,26 +14284,26 @@ type MoviesFields_description_Delete {
   permission: Boolean!
 }
 
-type MoviesFields_actor {
-  create: MoviesFields_actor_Create
-  read: MoviesFields_actor_Read
-  update: MoviesFields_actor_Update
-  delete: MoviesFields_actor_Delete
+type MoviesFields_actors {
+  create: MoviesFields_actors_Create
+  read: MoviesFields_actors_Read
+  update: MoviesFields_actors_Update
+  delete: MoviesFields_actors_Delete
 }
 
-type MoviesFields_actor_Create {
+type MoviesFields_actors_Create {
   permission: Boolean!
 }
 
-type MoviesFields_actor_Read {
+type MoviesFields_actors_Read {
   permission: Boolean!
 }
 
-type MoviesFields_actor_Update {
+type MoviesFields_actors_Update {
   permission: Boolean!
 }
 
-type MoviesFields_actor_Delete {
+type MoviesFields_actors_Delete {
   permission: Boolean!
 }
 
@@ -16022,7 +16022,7 @@ input mutationMovieInput {
   media: String!
   title: String
   description: String
-  actor: [String]
+  actors: [String]
   updatedAt: String
   createdAt: String
 }
@@ -16031,7 +16031,7 @@ input mutationMovieUpdateInput {
   media: String
   title: String
   description: String
-  actor: [String]
+  actors: [String]
   updatedAt: String
   createdAt: String
 }

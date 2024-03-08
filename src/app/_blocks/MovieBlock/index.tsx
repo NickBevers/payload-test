@@ -9,7 +9,7 @@ import classes from './index.module.scss'
 
 type Props = Extract<Page['layout'][0], { blockType: 'movieBlock' }> & {
   movie: Movie & {
-    actor: Actor | Actor[]
+    actors: Actor | Actor[]
   }
 }
 
@@ -24,10 +24,10 @@ export const MovieBlock: React.FC<Props> = props => {
 
       <h3>Actor</h3>
       <ul>
-        {Array.isArray(props.movie.actor) ? (
-          props.movie.actor.map((actor: Actor) => <li key={actor.id}>{actor.first_name}</li>)
+        {Array.isArray(props.movie.actors) ? (
+          props.movie.actors.map((actor: Actor) => <li key={actor.id}>{actor.first_name}</li>)
         ) : (
-          <li key={(props.movie.actor as Actor).id}>{(props.movie.actor as Actor).first_name}</li>
+          <li key={(props.movie.actors as Actor).id}>{(props.movie.actors as Actor).first_name}</li>
         )}
       </ul>
     </Gutter>

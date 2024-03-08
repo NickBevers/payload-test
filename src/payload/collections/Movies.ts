@@ -26,7 +26,7 @@ const Movies: CollectionConfig = {
       label: 'Description',
     },
     {
-      name: 'actor',
+      name: 'actors',
       hasMany: true,
       type: 'relationship',
       relationTo: 'actors',

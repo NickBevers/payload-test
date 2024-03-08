@@ -641,7 +641,7 @@ export interface Movie {
   media: string | Media;
   title?: string | null;
   description?: string | null;
-  actor: (string | Actor)[];
+  actors: (string | Actor)[];
   updatedAt: string;
   createdAt: string;
 }

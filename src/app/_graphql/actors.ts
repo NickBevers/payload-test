@@ -4,6 +4,6 @@ const ACTOR_FIELDS = `
   last_name
 `
 
-export const ACTOR = `actor {
+export const ACTOR = `actors {
   ${ACTOR_FIELDS}
 }`
